@@ -1,0 +1,11 @@
+databaseChangeLog:
+  - include:
+      file: liquibase/changesets/initial.sql
+  - changeSet:
+      id: change-chatid-type-to-bigint
+      author: vdineka
+      changes:
+        - modifyDataType:
+            tableName: notification_task
+            columnName: chat_id
+            newDataType: BIGINT
